@@ -1,37 +1,29 @@
 # Fogwill
 
-Permuta lo dado. Dado `"argentino"`, retorna una linda lista con todas las permutaciones posibles de aquella palabra.
+Permuta lo dado. Dado un [BitString](https://elixir-lang.org/getting-started/binaries-strings-and-char-lists.html#bitstrings), como `'argentino'`, retorna una linda lista con todas las permutaciones posibles de aquella palabra. 
 
 ```elixir
-  xs = Fogwill.mind("argentino")
-  
-  ##### xs, entre otros resultados.
-  [
-    ...
-    'ignoanter',
-    'ignoraetn',
-    'ignoraent',
-    'ignoraten',
-    'ignoratne',
-    'ignoranet',
-    'ignorante',
-    'ignoreatn',
-    'ignoreant',
-    'ignoretan',
-    'ignoretna',
-    'ignorenat',
-    'ignorenta',
-    'ignortaen',
-    ...
-  ]
+iex(1)> xs = Fogwill.mind('argentino')
+['argentino', 'argention', 'argentnio', 'argentnoi', 'argentoin', 'argentoni',
+ 'argenitno', 'argeniton', 'argeninto', 'argeninot', 'argeniotn', 'argeniont',
+ 'argenntio', 'argenntoi', 'argennito', 'argenniot', 'argennoti', 'argennoit',
+ 'argenotin', 'argenotni', 'argenoitn', 'argenoint', 'argenonti', 'argenonit',
+ 'argetnino', 'argetnion', 'argetnnio', 'argetnnoi', 'argetnoin', 'argetnoni',
+ 'argetinno', 'argetinon', 'argetinno', 'argetinon', 'argetionn', 'argetionn',
+ 'argetnino', 'argetnion', 'argetnnio', 'argetnnoi', 'argetnoin', 'argetnoni',
+ 'argetonin', 'argetonni', 'argetoinn', 'argetoinn', 'argetonin', 'argetonni',
+ 'argeintno', 'argeinton', ...]
+iex(2)> Enum.count(xs)
+362880
+iex(3)> Enum.random(xs)
+'ignorante'
 ```
 
 Y asi distintos algoritmos realizan el computo. El que te toca te toca. Lo decide el destino.
 
 ## Installation
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `fogwill` to your list of dependencies in `mix.exs`:
+The package can be installed by adding `fogwill` to your list of dependencies in `mix.exs`:
 
 ```elixir
 def deps do
