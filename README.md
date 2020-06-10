@@ -1,6 +1,6 @@
 # Fogwill
 
-Permuta lo dado. Dado un [BitString](https://elixir-lang.org/getting-started/binaries-strings-and-char-lists.html#bitstrings), como `'argentino'`, retorna una linda lista con todas las permutaciones posibles de aquella palabra. 
+[Permuta](https://en.wikipedia.org/wiki/Permutation) lo dado. Dado un [Bitstring](https://elixir-lang.org/getting-started/binaries-strings-and-char-lists.html#bitstrings), como `'argentino'`, retorna una linda lista con todas las [permutaciones](https://en.wikipedia.org/wiki/Permutation) posibles de aquella palabra. 
 
 ```elixir
 iex(1)> xs = Fogwill.mind('argentino')
