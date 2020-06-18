@@ -3,20 +3,21 @@
 [Permuta](https://en.wikipedia.org/wiki/Permutation) lo dado. Dado un [Bitstring](https://elixir-lang.org/getting-started/binaries-strings-and-char-lists.html#bitstrings), como `'argentino'`, retorna una linda lista con todas las [permutaciones](https://en.wikipedia.org/wiki/Permutation) posibles de aquella palabra. 
 
 ```elixir
-iex(1)> xs = Fogwill.mind('argentino')
-['argentino', 'argention', 'argentnio', 'argentnoi', 'argentoin', 'argentoni',
- 'argenitno', 'argeniton', 'argeninto', 'argeninot', 'argeniotn', 'argeniont',
- 'argenntio', 'argenntoi', 'argennito', 'argenniot', 'argennoti', 'argennoit',
- 'argenotin', 'argenotni', 'argenoitn', 'argenoint', 'argenonti', 'argenonit',
- 'argetnino', 'argetnion', 'argetnnio', 'argetnnoi', 'argetnoin', 'argetnoni',
- 'argetinno', 'argetinon', 'argetinno', 'argetinon', 'argetionn', 'argetionn',
- 'argetnino', 'argetnion', 'argetnnio', 'argetnnoi', 'argetnoin', 'argetnoni',
- 'argetonin', 'argetonni', 'argetoinn', 'argetoinn', 'argetonin', 'argetonni',
- 'argeintno', 'argeinton', ...]
-iex(2)> Enum.count(xs)
+iex(1)> {:ok, xs, count} = Fogwill.mind 'argentino'
+{:ok,
+ ["argentino", "argention", "argentnio", "argentnoi", "argentoin", "argentoni",
+  "argenitno", "argeniton", "argeninto", "argeninot", "argeniotn", "argeniont",
+  "argenntio", "argenntoi", "argennito", "argenniot", "argennoti", "argennoit",
+  "argenotin", "argenotni", "argenoitn", "argenoint", "argenonti", "argenonit",
+  "argetnino", "argetnion", "argetnnio", "argetnnoi", "argetnoin", "argetnoni",
+  "argetinno", "argetinon", "argetinno", "argetinon", "argetionn", "argetionn",
+  "argetnino", "argetnion", "argetnnio", "argetnnoi", "argetnoin", "argetnoni",
+  "argetonin", "argetonni", "argetoinn", "argetoinn", "argetonin", "argetonni",
+  ...], 362880}
+iex(2)> count
 362880
 iex(3)> Enum.random(xs)
-'ignorante'
+"ignorante"
 ```
 
 Y asi distintos algoritmos realizan el computo. El que te toca te toca. Lo decide el destino.
