@@ -9,9 +9,11 @@ defmodule Fogwill.Algorithms.Concurrent do
     |> Enum.map(fn c ->
       Task.async(fn ->
         rest = xs -- c
-        Recursive.mind(rest) |> Enum.map(&(c ++ &1))
+        Recursive.mind(rest) |> Enum.map(&to_string(c ++ &1))
       end)
     end)
-    |> Enum.flat_map(&Task.await/1)
+    # We're sure this will finish.
+    |> Enum.map(&Task.await(&1, :infinity))
+    |> List.flatten()
   end
 end

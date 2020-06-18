@@ -3,7 +3,14 @@ defmodule Algorithms.RecursiveTest do
   use ExUnit.Case, async: true
 
   test "permutes the bistring 123" do
-    assert Recursive.mind('123') == ['123', '132', '213', '231', '312', '321']
+    assert Recursive.mind('123') == [
+             '123',
+             '132',
+             '213',
+             '231',
+             '312',
+             '321'
+           ]
   end
 
   test "permutes the bitstring 12345" do
