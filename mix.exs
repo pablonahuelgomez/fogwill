@@ -4,7 +4,7 @@ defmodule Fogwill.MixProject do
   def project do
     [
       app: :fogwill,
-      version: "10.6.2020",
+      version: "0.1.0",
       elixir: "~> 1.9",
       start_permanent: Mix.env() == :prod,
       deps: deps()
@@ -14,7 +14,8 @@ defmodule Fogwill.MixProject do
   # Run "mix help compile.app" to learn about applications.
   def application do
     [
-      extra_applications: [:logger]
+      extra_applications: [:logger],
+      mod: {Fogwill.Application, []}
     ]
   end
 
