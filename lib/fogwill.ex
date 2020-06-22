@@ -2,20 +2,21 @@ defmodule Fogwill do
   alias Fogwill.Algorithms.Recursive
   alias Fogwill.Algorithms.Concurrent
 
-  def mind([]), do: [[]]
+  def mind(xs, subscribers \\ [])
+  def mind([], _), do: [[]]
 
-  def mind(xs) do
-    length(xs) |> execute(xs)
+  def mind(xs, subscribers) do
+    length(xs) |> execute(xs, subscribers)
   end
 
-  defp execute(length, _) when length > 10, do: {:error, "Length can't be higher than 10"}
+  defp execute(length, _, _) when length > 10, do: {:error, "Length can't be higher than 10"}
 
-  defp execute(length, xs) when length <= 10 do
+  defp execute(length, xs, subscribers) when length <= 10 do
     result =
-      if length(xs) > 4 do
-        Concurrent.mind(xs)
+      if length > 4 do
+        Concurrent.mind(xs, subscribers)
       else
-        Recursive.mind(xs) |> Enum.map(&to_string/1)
+        Recursive.mind(xs, subscribers) |> Enum.map(&to_string/1)
       end
 
     {:ok, result, Enum.count(result)}

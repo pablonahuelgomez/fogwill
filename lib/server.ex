@@ -14,7 +14,7 @@ defmodule Fogwill.Server do
   end
 
   def mind(words, server \\ __MODULE__) do
-    GenServer.call(server, {:mind, words})
+    GenServer.call(server, {:mind, words}, :infinity)
   end
 
   # Server
