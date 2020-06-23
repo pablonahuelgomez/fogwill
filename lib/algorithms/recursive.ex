@@ -9,8 +9,10 @@ defmodule Fogwill.Algorithms.Recursive do
         do: helper([h | t], subs)
   end
 
+  defp helper(xs, []), do: xs
+
   defp helper(xs, ss) do
-    ss |> Enum.each(fn s -> s.receive(xs) end)
+    ss |> Enum.each(fn {from, s} -> s.receive(xs, from) end)
     xs
   end
 end
