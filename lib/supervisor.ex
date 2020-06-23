@@ -11,7 +11,8 @@ defmodule Fogwill.Supervisor do
   @impl true
   def init(:ok) do
     children = [
-      {Fogwill.Server, name: Fogwill.Server}
+      {Fogwill.Server, name: Fogwill.Server},
+      {Phoenix.PubSub, name: Fogwill.PubSub}
     ]
 
     Supervisor.init(children, strategy: :one_for_one)

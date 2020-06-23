@@ -13,8 +13,8 @@ defmodule Fogwill.Server do
     GenServer.stop(server)
   end
 
-  def mind(word, subscribers \\ [], server \\ __MODULE__) do
-    GenServer.call(server, {:mind, word, subscribers}, :infinity)
+  def mind(word, server \\ __MODULE__) do
+    GenServer.call(server, {:mind, word}, :infinity)
   end
 
   # Server
@@ -24,7 +24,7 @@ defmodule Fogwill.Server do
   end
 
   @impl true
-  def handle_call({:mind, word, subscribers}, _from, state) do
-    {:reply, Fogwill.mind(word, subscribers), state}
+  def handle_call({:mind, word}, _from, state) do
+    {:reply, Fogwill.mind(word), state}
   end
 end

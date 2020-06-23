@@ -1,23 +1,20 @@
 defmodule Fogwill.Algorithms.Concurrent do
   alias Fogwill.Algorithms.Recursive
 
-  def mind(xs, subscribers \\ [])
+  def mind([]), do: [[]]
 
-  def mind([], _), do: [[]]
-
-  def mind(xs, subscribers) do
+  def mind(xs) do
     xs
     |> Enum.map(&[&1])
     |> Enum.map(fn c ->
       Task.async(fn ->
         result =
           (xs -- c)
-          |> Recursive.mind([])
+          |> Recursive.mind()
           |> Enum.map(&to_string(c ++ &1))
 
-        subscribers
-        |> Enum.each(fn {from, s} ->
-          Enum.each(result, &s.receive(&1, from))
+        result |> Enum.each(fn word ->
+          Phoenix.PubSub.broadcast(Fogwill.PubSub, "words", {:word, %{word: word}})
         end)
 
         result
