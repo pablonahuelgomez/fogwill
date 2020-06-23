@@ -52,7 +52,7 @@ The package can be installed by adding `fogwill` to your list of dependencies in
 ```elixir
 def deps do
   [
-    {:fogwill, "~> 10.6.2020"}
+    {:fogwill, "~> 0.1.0"}
   ]
 end
 ```
