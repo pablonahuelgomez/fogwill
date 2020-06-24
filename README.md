@@ -1,6 +1,6 @@
 # Fogwill
 
-[Permutates](https://en.wikipedia.org/wiki/Permutation) words. Inspired by Memoria Romana, from Fogwill.
+[Permutes](https://en.wikipedia.org/wiki/Permutation) words. Inspired by Memoria Romana, from Fogwill.
 
 ## Examples
 
