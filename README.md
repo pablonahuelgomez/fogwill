@@ -1,3 +1,6 @@
+![Elixir CI](https://github.com/pablonahuelgomez/fogwill/workflows/Fogwill%20CI/badge.svg?branch=master)
+
+
 # Fogwill
 
 [Permutes](https://en.wikipedia.org/wiki/Permutation) words. Inspired by Memoria Romana, from Fogwill.
