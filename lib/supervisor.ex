@@ -10,9 +10,11 @@ defmodule Fogwill.Supervisor do
 
   @impl true
   def init(:ok) do
+    pub_sub_library = Application.get_env(:fogwill, :pub_sub_library)
+
     children = [
       {Fogwill.Server, name: Fogwill.Server},
-      {Phoenix.PubSub, name: Fogwill.PubSub}
+      {pub_sub_library, name: Fogwill.PubSub}
     ]
 
     Supervisor.init(children, strategy: :one_for_one)

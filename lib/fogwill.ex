@@ -1,5 +1,4 @@
 defmodule Fogwill do
-  alias Fogwill.Algorithms.Recursive
   alias Fogwill.Algorithms.Concurrent
 
   def mind([]), do: [[]]

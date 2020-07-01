@@ -8,7 +8,7 @@ defmodule Mix.Tasks.Bench do
   def run(_) do
     Benchee.run(
       %{
-        "Concurrent" => &Concurrent.mind(&1),
+        "Concurrent" => &Concurrent.mind(&1, false),
         "Recursive" => &Recursive.mind(&1)
       },
       inputs: %{
@@ -17,7 +17,7 @@ defmodule Mix.Tasks.Bench do
         "Levrero" => 'Levrero',
         "Benesdra" => 'Benesdra'
       },
-      time: 3
+      time: 2
     )
   end
 end

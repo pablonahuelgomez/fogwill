@@ -1,5 +1,4 @@
 defmodule Fogwill.Algorithms.Recursive do
-
   def mind([]), do: [[]]
 
   def mind(xs) do
