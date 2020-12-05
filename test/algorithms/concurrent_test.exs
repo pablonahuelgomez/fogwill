@@ -2,6 +2,10 @@ defmodule Algorithms.ConcurrentTest do
   alias Fogwill.Algorithms.Concurrent
   use ExUnit.Case, async: true
 
+  test "permutes the bitstring 1" do
+    assert Concurrent.mind('1') == ["1"]
+  end
+
   test "permutes the bistring 123" do
     assert Concurrent.mind('123') == [
              "123",
