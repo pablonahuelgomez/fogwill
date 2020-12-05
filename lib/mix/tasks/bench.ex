@@ -14,6 +14,7 @@ defmodule Mix.Tasks.Bench do
       inputs: %{
         "Aira" => 'Aira',
         "Borges" => 'Borges',
+        "Gomez" => 'Gomez',
         "Levrero" => 'Levrero',
         "Benesdra" => 'Benesdra'
       },
